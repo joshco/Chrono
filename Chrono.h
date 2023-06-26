@@ -114,7 +114,10 @@ public:
 
   /// Returns the time in seconds (millis() / 1000).
   static chrono_t seconds();
-  
+
+  // Reset timer - equivalent to restart() with immediate stop()
+  void restart();
+
 private:
   void _init(chrono_t (*getTime_)(void), bool startNow);
 };
