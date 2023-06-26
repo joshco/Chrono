@@ -82,6 +82,14 @@ void Chrono::resume() {
   }
 }
 
+void Chrono::reset() {
+  if (_isRunning) {
+    _startTime = _getTime();
+    _offset    = 0;;
+    _isRunning = false;
+  }
+}
+
 void Chrono::add(Chrono::chrono_t t) {
   _offset += t;
 }
